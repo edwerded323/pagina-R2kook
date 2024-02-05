@@ -1,7 +1,7 @@
 
 <div id="especiales" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">   
       
-      <h2 class="section-title">RECETAS ESPECIALES</h2>
+      <h2 class="section-title">ESPECIALES</h2>
 <div class="row">
   <div class="col-md-4">
     <div class="thumbnail">
