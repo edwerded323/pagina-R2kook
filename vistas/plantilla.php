@@ -9,12 +9,15 @@
     <title>R2Dcook | </title>
 
     <!-- font icons -->
-    <link rel="stylesheet" href="vistas\assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vistas/assets/vendors/themify-icons/css/themify-icons.css">
 
-    <link rel="stylesheet" href="vistas\assets/vendors/animate/animate.css">
+    <link rel="stylesheet" href="vistas/assets/vendors/animate/animate.css">
 
     <!-- Bootstrap + FoodHut main styles -->
-    <link rel="stylesheet" href="vistas\assets/css/foodhut.css">
+    <link rel="stylesheet" href="vistas/assets/css/foodhut.css">
+
+    <!-- sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
@@ -37,114 +40,136 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
 
-                <?php if (isset($_GET['ruta'])) : ?>
+                <?php if (isset($_GET['ruta'])): ?>
 
-                    <?php if ($_GET['ruta'] == "inicio") : ?>
+                    <?php if ($_GET['ruta'] == "inicio"): ?>
 
                         <li class="nav-item">
                             <a class="nav-link active " href="index.php?ruta=inicio">Principal</a>
                         </li>
 
-                    <?php else : ?>
+                    <?php else: ?>
 
                         <li class="nav-item">
                             <a class="nav-link " href="index.php?ruta=inicio">Principal</a>
                         </li>
 
-                    <?php endif ?>
-                    <?php if ($_GET['ruta'] == "recetas") : ?>
+                    <?php endif?>
+                    <?php if ($_GET['ruta'] == "recetas"): ?>
 
                         <li class="nav-item">
                             <a class="nav-link active " href="index.php?ruta=recetas">Recetas</a>
                         </li>
 
-                    <?php else : ?>
+                    <?php else: ?>
 
                         <li class="nav-item">
                             <a class="nav-link " href="index.php?ruta=recetas">Recetas</a>
                         </li>
 
-                    <?php endif ?>
+                    <?php endif?>
 
-                    <?php if ($_GET['ruta'] == "niveles") : ?>
+                    <?php if ($_GET['ruta'] == "niveles"): ?>
 
                         <li class="nav-item">
                             <a class="nav-link active " href="index.php?ruta=niveles">Niveles</a>
                         </li>
 
-                    <?php else : ?>
+                    <?php else: ?>
 
                         <li class="nav-item">
                             <a class="nav-link " href="index.php?ruta=niveles">Niveles</a>
                         </li>
 
-                    <?php endif ?>
-                    <?php if ($_GET['ruta'] == "especiales") : ?>
+                    <?php endif?>
+                    <?php if ($_GET['ruta'] == "especiales"): ?>
 
                         <li class="nav-item">
                             <a class="nav-link active " href="index.php?ruta=especiales">Especiales</a>
                         </li>
 
-                    <?php else : ?>
+                    <?php else: ?>
 
                         <li class="nav-item">
                             <a class="nav-link " href="index.php?ruta=especiales">Especiales</a>
+
                         </li>
 
-                    <?php endif ?>
+
+
+                    <?php endif?>
+
+
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="index.php?ruta=inicio">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.php?ruta=recetas">Recetas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " href="index.php?ruta=niveles">Niveles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " href="index.php?ruta=especiales">Especiales</a>
+                    </li>
+
+
+                    <div class="overlay text-white text-center">
+                        <h1 class="display-2 font-weight-bold my-3">R2Dcook</h1>
+                        <h2 class="display-4 mb-5">Tu asistente en la cocina</h2>
+
+
+                    </div>
+
+
+                <?php endif?>
 
 
 
 
-                <?php endif ?>
 
 
 
 
 
 
+                <ul class="navbar-nav">
 
 
-               
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registro">Inicio de sesion</button>
 
-            <ul class="navbar-nav">
-
-
-                <li class="nav-item">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registro">Inicio de sesion</button>
-
-                </li>
-            </ul>
+                    </li>
+                </ul>
         </div>
     </nav>
 
     <?php
 
-    include "inicio.php";
-    include "registro.php";
+include "inicio.php";
+include "registro.php";
+
+if (isset($_GET['ruta'])) {
+
+    if (
+        $_GET['ruta'] == "inicio" ||
+        $_GET['ruta'] == "recetas" ||
+        $_GET['ruta'] == "niveles" ||
+        $_GET['ruta'] == "especiales"
+    ) {
+
+        include $_GET['ruta'] . ".php";
+    } else {
+        include "404.php";
+    }
+}
+;
+
+?>
 
 
 
-    if (isset($_GET['ruta'])) {
-
-
-
-        if (
-            $_GET['ruta'] == "niveles" ||
-            $_GET['ruta'] == "recetas" ||
-            $_GET['ruta'] == "niveles" ||
-            $_GET['ruta'] == "especiales"
-        ) {
-
-            include $_GET['ruta'] . ".php";
-        } else {
-        }
-    };
-
-
-
-
-    ?>
 
 
 
@@ -165,17 +190,17 @@
     <!-- end of page footer -->
 
     <!-- core  -->
-    <script src="vistas\assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="vistas\assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="vistas/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="vistas/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
     <!-- bootstrap affix -->
-    <script src="vistas\assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="vistas/assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
     <!-- wow.js -->
-    <script src="vistas\assets/vendors/wow/wow.js"></script>
+    <script src="vistas/assets/vendors/wow/wow.js"></script>
 
 
-    <script src="vistas\assets/js/foodhut.js"></script>
+    <script src="vistas/assets/js/foodhut.js"></script>
 
 </body>
 
