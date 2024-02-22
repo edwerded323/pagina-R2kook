@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="thumbnail">
+
       <a href="inicio.php">
         <img src="vistas\assets\imgs\comida rapida.png" alt="Lights" style="width:60%">
         <div class="caption">

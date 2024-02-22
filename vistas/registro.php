@@ -1,4 +1,4 @@
-<div class="modal fade" id="registro">
+<div class="modal fade"   id="registro">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="login-wrap">
@@ -24,6 +24,8 @@
                             </div>
                             <div class="hr"></div>
                             <div class="foot-lnk">¿Olvidaste la Contraseña?</a>
+                            
+                            <label for="tab-2">¿Quieres registrarte?</a>
                             </div>
 
                             <?php
@@ -34,7 +36,7 @@
 
                         </form>
 
-
+                    
 
 
 
@@ -43,27 +45,39 @@
                                 <label for="nombre" class="label">Nombre de Usuario</label>
                                 <input id="nombre" type="text" class="input" name="reg_nombre">
                             </div>
+                            <?php 
+                           
+                            ?>
                             <div class="group">
                                 <label for="contraseña" class="label">Contraseña</label>
                                 <input id="reg_contraseña" type="password" class="input" data-type="password" name="reg_contraseña">
                             </div>
+                           
                             <div class="group">
                                 <label for="contraseña" class="label">Repetir Contraseña</label>
                                 <input id="reg_Rcontraseña" type="password" class="input" data-type="password" name="reg_Rcontraseña">
                             </div>
+                            
                             <div class="group">
                                 <label for="email" class="label">Correo</label>
                                 <input id="email" type="email" class="input" name="reg_email">
                             </div>
                             <div class="group">
                                 <input type="submit" class="button" value="Registrar">
-                            </div>
-                            <div class="hr"></div>
+                                
                             <div class="foot-lnk">
                                 <label for="tab-1">¿Ya estas registrado?</a>
                             </div>
+                            </div>
+                            
                             <?php
+                             
+    
+                               
+     
+                               
                             $registro =  ControladorFormularios::ctrRegistro();
+
 
                             if ($registro == "ok") {
 
@@ -81,7 +95,16 @@
                                                     timer: 2500
                                                 });
                                                 </script>';
-                                                                    }
+                                                                    } 
+                                                                   
+                                else {
+                                 
+                                                                
+                                 ' <script> 
+                                   alert("contraseña no coincide");
+                                                   </script>';
+                                                   }
+
 
                             ?>
                         </form>
