@@ -1,26 +1,25 @@
 <?php
 
- 
+
 if (!isset($_SESSION["rol"])) {
-  echo'<script> 
+  echo '<script> 
   window.location.href="index.php?ruta=inicio";
    
 </script>';
-return;
-
+  return;
 }
 
 if ($_SESSION["rol"] != 1) {
-  echo'<script> 
+  echo '<script> 
   window.location.href="index.php?ruta=recetas";
    
 </script>';
 
-return;
+  return;
 }
 
-if  ($_SESSION["rol"] == 1)
-echo'<script> 
+if ($_SESSION["rol"] == 1)
+  echo '<script> 
 swal.fire({
   icon: "success",
   title: "...",
@@ -37,24 +36,27 @@ swal.fire({
 
 
 <div id="" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn ">
-  
+
 
   <h2> Recetas</h2>
+  <button type="button" class="btn btn-outline-success btn-block"> <i class="fa-solid fa-circle-check" data-toggle="modal" data-target="#myModal">
+      Nueva receta
+  </button>
 
-  
 
-  <div class= container mt-3>
-  <table class="table table-striped table-bordered">       
-  
+
+  </form>
+  <table class="table table-striped table-bordered">
+
     <thead>
-     <tr>
+      <tr>
         <th>id Platillo</th>
         <th>Nombre de la platillo</th>
         <th>niveles</th>
         <th>paso a paso</th>
-        
-        
-        
+
+
+
       </tr>
     </thead>
     <tbody>
@@ -63,32 +65,49 @@ swal.fire({
         <td>arroz Blanco</td>
         <td>basico</td>
         <td>basico</td>
-        <td> <button class="btn bnt-info "> modificar</button></td>
-        <td> <button class="btn bnt-primary "> eliminar</button></td>
-      </tr>      
-      <tr >
-        <td>Success</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-       
-      </tr>
-      <tr >
-        <td>Danger</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr >
-        <td>Info</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>
-          <div class="btn btn-grop"></div>
+        <div class="btn btn-grop"></div>
+        <td> <button class="btn btn-warning"> <i class="fa-regular fa-pen-to-square"></i></button>
+          <button class="btn btn-primary"> <i class="fa-regular fa-trash-can"></i></button>
+
+
 
         </td>
+
       </tr>
-      
     </tbody>
   </table>
-  </div>
+
 </div>
+</div>
+
+
+</section>
+</div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Nueva Receta</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="group">
+        <label for="n_receta" class="label">Nombre de la receta</label>
+        <input id="reg_Rcontraseña" type="text" class="input"  name="n_receta" placeholder="Ingrese el nombre de la receta">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
 </div>

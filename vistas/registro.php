@@ -1,4 +1,4 @@
-<div class="modal fade"   id="registro">
+<div class="modal fade" id="registro">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="login-wrap">
@@ -90,20 +90,15 @@
                                                 Swal.fire({
                                                     position: "top-end",
                                                     icon: "success",
-                                                    title: "Your work has been saved",
+                                                    title: "Registro correecto",
                                                     showConfirmButton: false,
                                                     timer: 2500
                                                 });
                                                 </script>';
                                                                     } 
                                                                    
-                                else {
-                                 
-                                                                
-                                 ' <script> 
-                                   alert("contraseña no coincide");
-                                                   </script>';
-                                                   }
+                                
+                                                   
 
 
                             ?>

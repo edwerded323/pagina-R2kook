@@ -19,31 +19,31 @@ class ControladorFormularios
                     "email" => $_POST['reg_email'],
                     "nombre" => $_POST['reg_nombre'],
                     "contra" => $_POST['reg_contraseña'],
-                    "rol" => $_POST['id_rol'],
-                    "id" => $_POST['ID']
-
 
                 );
 
                 $respuesta = ModeloFormularios::modeloregistro($tabla, $datos);
 
                 return $respuesta;
-            } else {
-                echo
 
+            } else {
+              echo 
+                                 
                 '         
                 <script>                            
                 swal.fire("contraseña no coincide");
 
-                if(window.history.replaceState ){
-                    window.history.replaceState( null, null, window.location.href )};
-                    
                 
-                </script>';
+                
+                </script>'; }
+                
+
+
+                                 
+                                
             }
         }
-    }
-
+    
 
     /**inicio de sesion */
 
@@ -71,11 +71,8 @@ class ControladorFormularios
                             
                     echo
 
-                    '<script> swal.fire({
-                    icon: "success",
-                    title: "...",
-                    text: "acceso correcto",
-                });
+                    '<script> 
+                
                 
                 window.location.href="index.php?ruta=ingresorecetas";
                   
@@ -96,12 +93,9 @@ class ControladorFormularios
 
                     echo
 
-                    '<script> swal.fire({
-                    icon: "success",
-                    title: "Bienvenido",
-                    text: "acceso correcto",
+                    '<script> 
                     
-                });
+                
                   
                    
                   
@@ -135,13 +129,13 @@ class ControladorFormularios
         }
     }
 
-    /**mostrar registros */
+
     static public function ctrMostrarRegis(){
 
 
-                $tabla = "usuario";
-            $respuesta= modeloFormularios::modelomostrarRegist($tabla );
-            return $respuesta;
+        $tabla = "usuario";
+    $respuesta= modeloFormularios::modelomostrarRegist($tabla );
+    return $respuesta;
 
-    }
+}
 }

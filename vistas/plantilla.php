@@ -1,7 +1,7 @@
 <?php
  session_start();
 
- $ediarResgistro = ControladorFormularios::ctrMostrarRegis();
+ 
 ?>
 
 
@@ -15,6 +15,7 @@
     <meta name="description" content="Start your development with FoodHut landing page.">
     <meta name="author" content="r2d">
     <title>R2Dcook | </title>
+    <link rel="icon" href="vistas\assets/imgs/logo1.0.png" />
 
     <!-- font icons -->
    
@@ -30,8 +31,8 @@
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-
+    <!-- fontawesome 5-->
+    <script src="https://kit.fontawesome.com/53e018ef4b.js" crossorigin="anonymous"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="inicio">
@@ -187,7 +188,9 @@
    
 
 </body>
-  
+  <footer>
+        <p>R2DCOOK | Asistente virtual de cocina, copyrigth&copy; DENT</p>
+    </footer>
 
 
 </html>

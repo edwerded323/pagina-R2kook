@@ -10,12 +10,11 @@ class ModeloFormularios {
         /*statement: declaracion*/ 
         
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (IDCorreo, Nombre, Contraseña,rol) VALUES (:email, :nombre, :contra :rol)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (IDCorreo, Nombre, Contraseña) VALUES (:email, :nombre, :contra)");
 
         $stmt->bindParam(':email', $datos['email'], PDO::PARAM_STR);
         $stmt->bindParam(':nombre', $datos['nombre'],  PDO::PARAM_STR);
         $stmt->bindParam(':contra', $datos['contra'],  PDO::PARAM_STR);
-        $stmt->bindParam(':rol', $datos['rol'],  PDO::PARAM_STR);
 
         if ($stmt->execute()){
             return "ok";
@@ -41,13 +40,11 @@ class ModeloFormularios {
 
         return $stmt-> fetch() ; 
 
-        $stmt-> close();
+        $stmt-> close ();
         $stmt = null;
 
     }  
 
-
-    /**********mostrar registro*/
 
     static public function modelomostrarRegist($tabla ) {
 
@@ -61,6 +58,4 @@ class ModeloFormularios {
         $stmt = null;
 
     }
-    
-            
 }
